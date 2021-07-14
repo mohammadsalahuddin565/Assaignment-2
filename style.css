@@ -16,8 +16,17 @@ body{
     display: flex;
     height: 677px;
     background-color: #2D25A0;
-    margin: 0%;
+    animation-name: bg;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
 }
+@keyframes bg {
+    0%   {background-color:blue;}
+  25%  {background-color:yellow;}
+  50%  {background-color:blue; }
+  75%  {background-color:green; }
+  100% {background-color:blue;}
+  }
 .header-left{
 position: absolute;
 width: 485px;
@@ -42,6 +51,10 @@ top: 464px;
 background: #E02C6D;
 text-decoration: none;
 color: #FFFFFF;
+transition-duration: 500ms;
+}
+a:hover{
+    background: #5e0224;   
 }
 .header-right{
 position: absolute;
@@ -50,7 +63,14 @@ height: 438px;
 left: 700px;
 top: 153px;
 align-items: center;
+transition: width 2s, height 2s, transform 2s;
+
 }
+.header-right:hover {
+    width: 606px;
+    height: 488px;
+  }
+    
 .header-right img{
     width: 110%;
     height: 110%;
@@ -95,3 +115,88 @@ margin-bottom: 0%;
 
 
 
+/*----------------Footer-Section----------------*/
+footer{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+position: absolute;
+width: 483.87px;
+height: 413px;
+left: 475px;
+top: 3000px;
+}
+footer img{
+width: 483.87px;
+height: 110px;
+}
+footer >h2 >a{
+    font-size: 14px;
+    background-color: #e7e4e4; 
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 50px;
+    color: #6C6C6C;
+
+}
+footer >h2 >p{
+    font-size: 24px;
+}
+
+/*----------------
+  Media-Queries
+----------------*/
+
+
+/*---Mobile-Devices---*/
+@media only screen and (max-width:669px) {
+/*---Header---*/
+.header{
+display: flex;
+flex-direction: column;
+margin: 0%;
+padding-right: 1%;
+width: 460px;
+height: 695px;
+}
+.header-left{
+    position: absolute;
+    width: 285px;
+    height: 230px;
+    left: 40px;
+    top: 150px;
+}
+h1{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 50px;
+}
+.header-right{
+    position: absolute;
+    width: 556.01px;
+    height: 438px;
+    left: 40px;
+    top: 450px;
+    align-items: center;
+    }
+.header-right img{
+    width: 50%;
+    height: 50%;
+}
+/*---Content---*/
+.players{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    width: 50%;
+    height: 50%;
+}
+
+
+
+
+}
